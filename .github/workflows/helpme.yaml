@@ -49,6 +49,10 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v7.1.0
         continue-on-error: true
+        with:
+          args: >-
+            -Dsonar.organization=pipemonkey
+            -Dsonar.projectKey=pipemonkey_DontEverPushThisCodeV2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
